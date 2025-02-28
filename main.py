@@ -7,6 +7,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from functions import collect_product_info
+import psycopg2
 
 
 def init_webdriver():
@@ -76,7 +77,7 @@ def get_products_links(item_name='headphones Xiaomi'):
 
     return driver
 
-
+#Не работает фунция def insert_into_postgres(products_data) 
 def insert_into_postgres(products_data):
     conn = psycopg2.connect("dbname=ozon_products user=postgres password=1234 host=localhost")
     cur = conn.cursor()
